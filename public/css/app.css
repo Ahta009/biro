@@ -1,0 +1,660 @@
+html, body {
+    height: 100%; /* Ensure the body and HTML element take up the full height of the viewport */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-family: Fira Sans;
+}
+
+.navutama {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navutama.transparent {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.navutama.scrolled {
+    background-color: #4169e1;
+    border-radius: 12px;
+    height: 90px;
+    position: sticky;
+    z-index: 5000;
+    /* Add any other styles you want for the scrolled state */
+}
+.nav1{
+    width: 500px;
+    margin: 9px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.nav2{
+    flex: 1;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    margin-left: 9px;
+}
+.main-container{
+    /* background-color: aquamarine;  */
+    height: 600px;
+}
+.containerevent{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.event {
+    background-color: #e9f3f7;
+    height: auto;
+    width: 200px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.event:hover {
+    background-color: #b0d4e4; /* Change background color on hover */
+    transform: scale(1.05); /* Slightly increase the size on hover for a better visual effect */
+}
+.gambar {
+    width: auto;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    
+}
+.gambar img{
+    width: 100%;
+    height: 100%;
+}
+.desc-container{
+    
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.keterangan{
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Align items to the bottom */
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+.detail{
+    flex: 1;
+    text-align: left;  /* Center text horizontally */
+    margin-left: 8px;
+}
+.noticecontainer{
+    display: flex;
+    position: absolute;
+    right: 10px;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;   
+    margin-right: 70px;
+}
+
+.layanan{
+    display: flex;
+    padding-left: 145px;   
+    margin-top: 60px;
+}
+.pengumuman-box{
+    background-color: #b0d4e4;
+    display: flex;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+.notice-title{
+    margin-left: 15px;
+    color: black;
+}
+.notice-title a {
+    color: black;
+    text-decoration: none;
+}
+.notice-title a:hover {
+    color: #1E90FF; /* Change this to the color you prefer */
+    text-decoration: underline; /* Optional, add any other hover effects you like */
+}
+.headevent a{
+    color: black;
+    text-decoration: none;
+}
+.headevent a:hover{
+    color: #002041;
+    text-decoration: underline;
+}
+.newsall a{
+    color: black;
+}
+.notice-icon{
+    color: #4169e1;
+    display: flex;
+    align-items: center;
+}
+.newscontainer{
+    height: 150px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+.foot{
+    width: auto;
+    height: auto;
+}
+.newshead {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    position: relative; /* Ensure relative positioning for absolute positioning of the underline */
+}
+
+.newshead::after {
+    content: ''; /* Create a pseudo-element for the underline */
+    position: absolute; /* Position the underline */
+    bottom: 34px; /* Align the underline to the bottom */
+     /* Align the underline to the left */
+    width: 10%; /* Make the underline span the entire width */
+    border-bottom: 3px solid #ffd82d; /* Specify the thickness and color of the underline */
+    box-sizing: border-box; /* Ensure the border is included in the element's total width */
+    padding-bottom: 5px; /* Add space between the text and the underline */
+    
+}
+
+.newsparts {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
+.news {
+    background-color: white;
+    border-radius: 6px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    box-sizing: border-box;
+    height: auto;
+    box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.5);
+}
+.newspicture{
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+}
+.newstitle{
+    margin: 2px;
+    margin-left: 8px;
+    margin-top: 8px;
+    width: 100%;
+    height: auto;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+.newsdate{
+    margin: 2px;
+    margin-left: 8px;
+    width: 100%;
+    height: 20px;
+    font-size: 12px;
+    color: rgb(195, 195, 195);
+}
+.newsdesc{
+    margin: 2px;
+    margin-left: 8px;
+    width: 100%;
+    height: auto;
+}
+.newsmore {
+    margin-top: auto; /* Push the button to the bottom */
+    display: flex;
+    justify-content: flex-end; /* Align the button to the right */
+}
+.newsmore button {
+    background-color: #b9e9ff; /* Green background */
+    border: none; /* Remove border */
+    color: black; /* White text */
+    padding: 10px 20px; /* Padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Inline block */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    cursor: pointer; /* Pointer cursor */
+    border-radius: 24px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+.newsall {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.newsall button {
+    background-color: #f6ffb0; /* Green background */
+    border: none; /* Remove border */
+    color: black; /* White text */
+    padding: 10px 20px; /* Padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    border-radius: 24px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.newsall button:hover {
+    background-color: #faff72; /* Darker green on hover */
+}
+.newsmore button:hover {
+    background-color: #4571a0; /* Darker green on hover */
+}
+.footercontainer{
+    background-color: #152227;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    margin-top: 600px;
+}
+.left-footer{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 2px;
+}
+.footerimage{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    margin-bottom: 25px;
+}
+.footerimage, img{
+    width: 100px;
+    height: 100px;
+}
+.footerhead{
+    flex: 1;
+    margin: 2px;
+    font-size: 36px;
+    font-weight: bold;
+}
+.footerdesc{
+    font-size: 24px;
+    flex: 1;
+    margin: 2px;
+    margin-top: 25px;
+}
+.botfooter{
+    flex: 1;
+    margin: 2px;
+}
+.mid-footer{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 2px;
+    margin-left: 80px;
+    line-height: 45px;
+}
+.right-footer{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 2px;
+    line-height: 45px;
+}
+.judul{
+    display: flex;
+    margin-right: 12px;
+    margin-left: 15px;
+    width: auto;
+    align-items: center;
+}
+.deskripsi{
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center; /* Center the image vertically */
+    font-size: 20px; /* Adjust the font size to your desired value */
+    line-height: 24px; /* Adjust the line height to your desired value */
+    text-align: center;
+    font-weight: bold;
+}
+.judul img {
+    width: 100px; /* Allow the width to adjust independently */
+    height: 100px; /* Allow the height to adjust independently */
+    margin-right: 12px;
+}
+.nav-container{
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    height: 100%; /* Ensure .nav-container fills the entire height of its parent */
+    
+}
+nav,nav-container{
+    border-radius: 4px;
+    font-size: 18px;
+    margin: 20px;
+    padding: 8px; /* Add padding for better visual spacing */
+    color: white; /* Add color for contrast */
+    cursor: pointer; /* Change cursor to pointer */
+    text-align: center; /* Center text inside nav items */
+    color: black;
+    transition: color 0.18s ease, text-shadow 0.5s ease;
+}
+nav:hover {
+    color: #0f5961; /* Change text color on hover */
+    text-shadow: 0 0 5px rgba(176, 212, 228, 0.7); /* Add a subtle text shadow on hover */
+}
+.slideshow-container {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+    opacity: 0; /* Initially hide all slides */
+}
+.slide.active {
+    opacity: 1; /* Display active slide */
+}
+.slide .text {
+    color: white;
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    left: 80px; /* Align text to the left */
+    top: 150px;
+    width: 600px;
+    height: 200px;
+    text-align: left; /* Align text to the left */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+.slidetitle{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+.slidedesc{
+    line-height: 30px;
+}
+.button-container {
+    position: absolute; /* Position the button absolutely */
+    bottom: 180px; /* Adjust vertical position as needed */
+    left: 133px; /* Align the button to the center horizontally */
+    transform: translateX(-50%); /* Center the button horizontally */
+}
+
+.custom-button {
+    background-color: #007bff; /* Change to your desired button color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #0056b3; /* Change to your desired hover color */
+}
+.fade {
+    animation: fade 1.5s ease-in-out;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.icon-button {
+    background-color: transparent; /* Remove default background */
+    color: #4169e1;
+    border: none; /* Remove default border */
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Center icon inside button */
+    justify-content: center; /* Center icon horizontally */
+    align-items: center; /* Center icon vertically */
+    width: 100px; /* Set the button width */
+    height: 100px; /* Set the button height */
+}
+
+.icon-button i {
+    font-size: 48px; /* Set icon size */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color change and transform */
+}
+.newspicture img.pict {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    border-top-left-radius: 6px; /* Apply the border-radius to the image */
+    border-top-right-radius: 6px;
+}
+.profil-dropdown {
+    display: none; /* Hide all dropdowns by default */
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+/* Show the dropdown menu when hovering over the "Profil" item */
+.profil:hover .profil-dropdown {
+    display: block;
+}
+
+/* Style the dropdown list items */
+.profil-dropdown li {
+    list-style-type: none;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Change background color of dropdown list items on hover */
+.profil-dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Nested dropdown items */
+.profil-dropdown li ul {
+    display: none; /* Hide nested dropdowns by default */
+    position: absolute;
+    left: 100%; /* Position the nested dropdowns to the right */
+    top: 0; /* Align the nested dropdowns with the parent item */
+}
+
+.profil-dropdown li:hover ul {
+    display: block; /* Display the nested dropdown when hovering over the parent item */
+}
+
+.profil-dropdown ul {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    margin-top: 0; /* Remove margin-top to align with the parent */
+    z-index: 1000;
+    width: 200px;
+    left: 100%; /* Align the submenu with the right edge of the parent */
+}
+
+.profil-dropdown ul li:hover ul {
+    display: block; /* Ensure submenu remains visible when hovering over its parent */
+}
+.agenda{
+    background-color: #2f2424;
+    height: 550px;
+    margin-top: 90px;
+}
+.agendahead{
+    color: white;
+    margin: 5px;
+    padding-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.agendahead2{
+    color: white;
+    margin: 5px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+.agendacontent{
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.agendacard{
+    background-color: rgb(236, 236, 236);
+    width: 500px;
+    height: 250px;
+    margin: 19px;
+}
+.agendamore {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.agendamore button {
+    background-color: #f6ffb0; /* Green background */
+    border: none; /* Remove border */
+    color: black; /* White text */
+    padding: 10px 20px; /* Padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    border-radius: 24px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.agendamore button:hover {
+    background-color: #faff72; /* Darker green on hover */
+}
+.agendaimage{
+    background-color: #2f2424;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 90px;
+    height: 90px;
+    margin: 2px;
+    margin-bottom: 50px;
+    position: absolute; /* Position the image absolutely */
+    transform: translateY(-50%);
+    margin-left: 32px;
+    display: flex; /* Use flexbox */
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center;
+}
+.agendadate{
+    font-size: 20px;
+    font-weight: bold;
+}
+.agendato{
+    width: 300px;
+    height: 20px;
+    margin: 2px;
+    color: black;
+    margin-top: 60px;
+    padding-left: 32px;
+    
+}
+.agendatitle{
+    width: 300px;
+    height: auto;
+    margin: 2px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    color: black;
+    padding-left: 32px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.agendatime{
+    width: 300px;
+    height : auto;
+    margin: 2px;
+    color: black;
+    padding-left: 32px;
+}
+.layananevent{
+    display: flex;
+    border-radius: 10px;
+    margin-top: 35px;
+}
+.panduan{
+    height: 130px;
+    width: 200px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
+}
+.eventwrapper{
+    display: flex;
+}
+.headevent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+}
+.line{
+    width: 100%;
+    height: 47px;
+    border-bottom: 2px solid #ffd82d;
+}
+.line2{
+    width: 100%;
+    height: 47px;
+    border-bottom: 2px solid #ffd82d;
+    margin-bottom: 30px;
+}

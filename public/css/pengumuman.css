@@ -1,0 +1,425 @@
+.navigation {
+    width: 90%;
+    margin: 0 auto; /* Center horizontally */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 2px 2px 2px 2px rgb(224, 224, 224);
+    z-index: 2;
+    position: sticky; /* Make it sticky */
+    top: 0; /* Stick to the top of the viewport */
+    background-color: #f0f0f0;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    height: 95px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.navigation.scrolled {
+    background-color: #00a2f5;
+    box-shadow: 2px 2px 2px 2px #00a2f5;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    border-radius: 12px;
+    position: fixed; /* Fix position when scrolled */
+    top: 0;
+    z-index: 1000; /* Ensure it is above other elements */
+}
+.nav1{
+    width: 500px;
+    margin: 9px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.nav2{
+    flex: 1;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    margin-left: 9px;
+}
+.judul{
+    display: flex;
+    margin-right: 12px;
+    margin-left: 15px;
+    width: auto;
+    align-items: center;
+}
+.deskripsi{
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center; /* Center the image vertically */
+    font-size: 20px; /* Adjust the font size to your desired value */
+    line-height: 24px; /* Adjust the line height to your desired value */
+    text-align: center;
+    font-weight: bold;
+}
+.judul img {
+    width: 100px; /* Allow the width to adjust independently */
+    height: 100px; /* Allow the height to adjust independently */
+    margin-right: 12px;
+}
+.nav-container{
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    height: 100%; /* Ensure .nav-container fills the entire height of its parent */
+    
+}
+nav,nav-container{
+    border-radius: 4px;
+    font-size: 18px;
+    margin: 20px;
+    padding: 8px; /* Add padding for better visual spacing */
+    color: white; /* Add color for contrast */
+    cursor: pointer; /* Change cursor to pointer */
+    text-align: center; /* Center text inside nav items */
+    color: black;
+    transition: color 0.18s ease, text-shadow 0.5s ease;
+}
+nav:hover {
+    color: #0f5961; /* Change text color on hover */
+    text-shadow: 0 0 5px rgba(176, 212, 228, 0.7); /* Add a subtle text shadow on hover */
+}
+.profil-dropdown {
+    display: none; /* Hide all dropdowns by default */
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+/* Show the dropdown menu when hovering over the "Profil" item */
+.profil:hover .profil-dropdown {
+    display: block;
+}
+
+/* Style the dropdown list items */
+.profil-dropdown li {
+    list-style-type: none;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Change background color of dropdown list items on hover */
+.profil-dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Nested dropdown items */
+.profil-dropdown li ul {
+    display: none; /* Hide nested dropdowns by default */
+    position: absolute;
+    left: 100%; /* Position the nested dropdowns to the right */
+    top: 0; /* Align the nested dropdowns with the parent item */
+}
+
+.profil-dropdown li:hover ul {
+    display: block; /* Display the nested dropdown when hovering over the parent item */
+}
+
+.profil-dropdown ul {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    margin-top: 0; /* Remove margin-top to align with the parent */
+    z-index: 1000;
+    width: 200px;
+    left: 100%; /* Align the submenu with the right edge of the parent */
+}
+.background-pengumuman {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('/images/retro.jpg');
+    position: relative;
+    overflow: hidden;
+}
+
+.background-pengumuman::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.desknav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    color: white;
+    font-size: 42px;
+}
+.pengumuman-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    width: auto;
+    height: 1200px;
+    background-color: #2c3e50;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 30px;
+}
+.pengumuman-content{
+    display: flex;
+    flex-grow: 1;
+    width: auto;
+    height: auto;
+    margin-bottom: 10px;
+}
+.content-box{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+    max-width: 330px;
+    max-height: 425px;
+    background-color: #d6eaf8;
+    justify-content: space-between;
+    padding: 10px;
+}
+.notice-image {
+    width: 100%; /* Make it take full width of its parent */
+    height: 100%; /* Adjust to content */
+    display: flex; /* Ensures flex properties apply */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+.notice-gambar {
+    width: 100%; /* Make the image take 100% of the parent's width */
+    height: 100%; /* Make the image take 100% of the parent's height */
+    object-fit: cover; /* Ensures the image covers the entire container */
+}
+.notice-title{
+    color: black;
+    font-weight: bold;
+    width: auto;
+    height: auto;
+}
+.notice-info{
+    font-size: 12px;
+    color: #ccc;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+.notice-desc{
+    width: auto;
+    height: auto;
+}
+.paginasi{
+    display: flex;
+    justify-content: center;
+    text-align: right;
+}
+.footercontainer{
+    background-color: #152227;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+.left-footer{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 2px;
+}
+.footerimage{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    margin-bottom: 25px;
+}
+.footerimage, img{
+    width: 100px;
+    height: 100px;
+}
+.footerhead{
+    flex: 1;
+    margin: 2px;
+    font-size: 36px;
+    font-weight: bold;
+}
+.footerdesc{
+    font-size: 24px;
+    flex: 1;
+    margin: 2px;
+    margin-top: 25px;
+}
+.botfooter{
+    flex: 1;
+    margin: 2px;
+}
+.mid-footer{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 2px;
+    margin-left: 80px;
+    line-height: 45px;
+}
+.right-footer{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 2px;
+    line-height: 45px;
+}
+.details-container{
+    display: flex;
+    width: auto;
+    height: auto;
+    margin-top: 30px;
+    
+}
+.details-content1{
+    background-color: rgb(186, 130, 78);
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.berita-imagecontainer{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+.berita-image{
+    width: 90%;
+    height: 100%;
+}
+.detaildeskripsi{
+    width: auto;
+    height: auto;
+    padding: 50px 50px 50px 50px;
+    margin-right: 20px;
+}
+.details-content2{
+    width: 30%;
+    height: auto;
+}
+.details-categori{
+    background-color: aliceblue;
+    margin-top: 30px;
+    width: auto;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.detailcat{
+    display: flex;
+    margin-bottom: 5px;
+    width: auto;
+    height: 20px;
+    margin-left: 5px;
+}
+.detailcathead{
+    background-color: aliceblue;
+    display: flex;
+    margin-bottom: 5px;
+    width: auto;
+    height: 20px;
+    margin-left: 5px;
+    font-size: 19px;
+}
+.icon-redaksi{
+    margin-left: 10px;
+}
+.line{
+    width: 100%;
+    height: 2px;
+    border-bottom: 2px solid #ffd82d;
+    margin-bottom: 5px;
+}
+.details-recent{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+}
+.details-social{
+    display: flex;
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+}
+.detailstwit{
+    background-color: #00a2f5;
+    color: white;
+    overflow: hidden; /* Ensures the image stays within the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 20px;
+    width: 24px;
+    height: 24px;
+}
+.detailsig{
+    background-color: #f00075;
+    color: white;
+    overflow: hidden; /* Ensures the image stays within the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 20px;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+.recentpost{
+    display: flex;
+    height: auto;
+    margin-bottom: 15px;
+    padding-left: 15px;
+}
+.redaksi-recent{
+    margin-left: 10px;
+}
+.recimage{
+    width: 50px;
+    height: 50px;
+}
+.tanggal{
+    color: rgb(116, 116, 116);
+}
+.penulis{
+    color: rgb(116, 116, 116);
+}
+.bffooter{
+    padding-left: 50px;
+    color: rgb(58, 58, 58);
+}
+.pagination{
+    display: flex;
+    justify-content: space-between;
+}
+
