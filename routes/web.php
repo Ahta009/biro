@@ -2,13 +2,19 @@
 
 use App\Models\Agenda;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\SubmisiController;
 use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PengajuanController;
+use App\Http\Controllers\OrganisasiController;
 use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\OrganizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +28,8 @@ use App\Http\Controllers\PengumumanController;
 */
 
 Route::get('/', [BerandaController::class, 'index']);
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::get('/pengumuman', [PengumumanController::class, 'index']);
 
@@ -80,3 +88,41 @@ Route::delete('/agendas/{agenda}', [AgendaController::class, 'destroy']);
 Route::post('/store', [AgendaController::class, 'store']);
 
 Route::get('admin/agenda/search', [AgendaController::class, 'search']);
+
+// controller submisi pemohon
+
+Route::get('pemohon/submisi', [SubmisiController::class, 'index']);
+
+Route::get('pemohon/submisi/{submisi}/show', [SubmisiController::class, 'show']);
+
+Route::get('pemohon/submisi/store', [SubmisiController::class, 'create']);
+
+Route::post('/submisi/store', [SubmisiController::class, 'store']);
+
+// controller submisi termohon
+
+Route::get('admin/submisi', [PengajuanController::class, 'index']);
+
+Route::get('/pdf/{file}', [PdfController::class, 'show'])->name('pdf.show');
+
+Route::get('admin/submisi/{submisi}/edit', [PengajuanController::class, 'edit']);
+
+Route::PUT('/submisis/{submisi}', [PengajuanController::class, 'update']);
+
+// controller organisasi
+Route::get('pemohon/organisasi', [OrganisasiController::class, 'index']);
+
+Route::get('pemohon/organisasi/{organisasi}/show', [OrganisasiController::class, 'show']);
+
+Route::get('pemohon/organisasi/store', [OrganisasiController::class, 'create']);
+
+Route::post('/organisasi/store', [OrganisasiController::class, 'store']);
+
+//controller verifikator organisasi
+Route::get('admin/organisasi', [OrganizationController::class, 'index']);
+
+Route::get('/pdf/{file}', [PdfController::class, 'show'])->name('pdf.show');
+
+Route::get('admin/organisasi/{organisasi}/edit', [OrganizationController::class, 'edit']);
+
+Route::PUT('/organisasis/{organisasi}', [OrganizationController::class, 'update']);

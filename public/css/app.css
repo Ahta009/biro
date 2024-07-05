@@ -54,11 +54,12 @@ html, body {
     width: 200px;
     border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
 }
 .event:hover {
     background-color: #b0d4e4; /* Change background color on hover */
     transform: scale(1.05); /* Slightly increase the size on hover for a better visual effect */
+    cursor: pointer;
 }
 .gambar {
     width: auto;
@@ -179,6 +180,10 @@ html, body {
     flex-direction: row;
     height: auto;
 }
+.news:hover{
+    transform: scale(1.05); /* Slightly increase the size on hover for a better visual effect */
+    cursor: pointer;
+}
 .news {
     background-color: white;
     border-radius: 6px;
@@ -188,6 +193,7 @@ html, body {
     margin: 10px;
     box-sizing: border-box;
     height: auto;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.5);
 }
 .newspicture{

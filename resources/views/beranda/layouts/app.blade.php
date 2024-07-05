@@ -34,7 +34,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <style>
             body {
-                background-image: url('{{ asset("images/bg.png") }}');
+                background-image: url('{{ asset("images/bg8.jpg") }}');
             }
         </style>
     </head>

@@ -20,4 +20,5 @@ class BerandaController extends Controller
         $newss = News::latest()->take(4)->get();
         return view('beranda.home2', compact('agendas', 'notices', 'newss'));
     }
+    
 }

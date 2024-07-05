@@ -47,7 +47,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('pages/widgets') }}" class="nav-link">
+                    <a href="{{ url('admin/submisi') }}" class="nav-link">
                         <i class="nav-icon fas fa-file"></i>
                         <p>Pengajuan Prodi Baru</p>
                     </a>
