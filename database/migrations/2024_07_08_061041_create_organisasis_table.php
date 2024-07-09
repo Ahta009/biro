@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('agendas', function (Blueprint $table) {
+        Schema::create('organisasis', function (Blueprint $table) {
             $table->id();
-            $table->string('agenda_title');
-            $table->string('agenda_audiens');
-            $table->text('agenda_description');
-            $table->string('agenda_image');
-            $table->date('agenda_tanggal');
-            $table->string('agenda_jam');
+            $table->string('judul_kegiatan');
+            $table->text('proposal_kegiatan');
+            $table->enum('status_kegiatan',['Pending','Diterima','Ditolak'])->default('Pending');
+            $table->text('keterangan_kegiatan')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agendas');
+        Schema::dropIfExists('organisasis');
     }
 };

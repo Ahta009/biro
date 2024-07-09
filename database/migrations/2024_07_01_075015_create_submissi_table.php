@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('submissi', function (Blueprint $table) {
+        Schema::create('submisis', function (Blueprint $table) {
             $table->id();
+            $table->string('judul_prodi');
+            $table->text('berkas_prodi');
+            $table->enum('status_prodi',['Pending','Diterima','Ditolak'])->default('Pending');
+            $table->text('keterangan_prodi')->nullable();
             $table->timestamps();
         });
     }

@@ -4,17 +4,24 @@ use App\Models\Agenda;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\RencanaController;
 use App\Http\Controllers\SubmisiController;
+use App\Http\Controllers\AuthBiroController;
 use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\AuthProdiController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\OrganisasiController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\OrganizationController;
+use App\Http\Controllers\AuthMahasiswaController;
+use App\Http\Controllers\AuthOrganisasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +34,7 @@ use App\Http\Controllers\OrganizationController;
 |
 */
 
-Route::get('/', [BerandaController::class, 'index']);
+Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
@@ -126,3 +133,46 @@ Route::get('/pdf/{file}', [PdfController::class, 'show'])->name('pdf.show');
 Route::get('admin/organisasi/{organisasi}/edit', [OrganizationController::class, 'edit']);
 
 Route::PUT('/organisasis/{organisasi}', [OrganizationController::class, 'update']);
+
+// controller rencana
+Route::get('pemohon/rencana', [RencanaController::class, 'index']);
+
+Route::get('pemohon/rencana/{rencana}/show', [RencanaController::class, 'show']);
+
+Route::get('pemohon/rencana/store', [RencanaController::class, 'create']);
+
+Route::post('/rencana/store', [RencanaController::class, 'store']);
+
+
+// controller verifikator rencana
+Route::get('admin/rencana', [PlanController::class, 'index']);
+
+Route::get('/pdf/{file}', [PdfController::class, 'show'])->name('pdf.show');
+
+Route::get('admin/rencana/{rencana}/edit', [PlanController::class, 'edit']);
+
+Route::PUT('/rencanas/{rencana}', [PlanController::class, 'update']);
+
+// controller registrasi
+Route::get('/registrasi/mahasiswa', [MahasiswaController::class, 'show']);
+Route::post('/registrasi/mahasiswa', [MahasiswaController::class, 'register'])->name('register.mahasiswa');
+
+// controller Authentifikasi
+Route::get('/login-mahasiswa', [AuthMahasiswaController::class, 'showLoginForm'])->name('login.mahasiswa');
+Route::post('/login-mahasiswa', [AuthMahasiswaController::class, 'login']);
+Route::post('/logout-mahasiswa', [AuthMahasiswaController::class, 'logout'])->name('logout.mahasiswa');
+
+// Organisasi Mahasiswa routes
+Route::get('/login-organisasi', [AuthOrganisasiController::class, 'showLoginForm'])->name('login.organisasi');
+Route::post('/login-organisasi', [AuthOrganisasiController::class, 'login']);
+Route::post('/logout-organisasi', [AuthOrganisasiController::class, 'logout'])->name('logout.organisasi');
+
+// Biro routes
+Route::get('/login-biro', [AuthBiroController::class, 'showLoginForm'])->name('login.biro');
+Route::post('/login-biro', [AuthBiroController::class, 'login']);
+Route::post('/logout-biro', [AuthBiroController::class, 'logout'])->name('logout.biro');
+
+// Prodi routes
+Route::get('/login-prodi', [AuthProdiController::class, 'showLoginForm'])->name('login.prodi');
+Route::post('/login-prodi', [AuthProdiController::class, 'login']);
+Route::post('/logout-prodi', [AuthProdiController::class, 'logout'])->name('logout.prodi');
