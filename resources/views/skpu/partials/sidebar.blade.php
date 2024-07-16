@@ -26,46 +26,35 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
+                
                 <li class="nav-item">
-                    <a href="{{ url('admin/notice') }}" class="nav-link">
-                        <i class="nav-icon fas fa-bullhorn"></i>
-                        <p>Pengumuman</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('admin/news') }}" class="nav-link">
-                        <i class="nav-icon fas fa-newspaper"></i>
-                        <p>Berita</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('admin/agenda') }}" class="nav-link">
-                        <i class="nav-icon fas fa-calendar"></i>
-                        <p>Agenda</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('pages/widgets') }}" class="nav-link">
-                        <i class="nav-icon fas fa-address-card"></i>
-                        <p>Pengajuan KTM</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('admin/submisi') }}" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>Pengajuan Prodi Baru</p>
+                    <a href="{{ url('pemohon/skpu/strategis') }}" class="nav-link">
+                        <i class="nav-icon far fa-file"></i>
+                        <p>Rencana Strategis</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ url('pages/widgets') }}" class="nav-link">
                         <i class="nav-icon far fa-file"></i>
-                        <p>Pengajuan Kegiatan</p>
+                        <p>Rencana Operasional</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('pages/widgets') }}" class="nav-link">
+                        <i class="nav-icon far fa-file"></i>
+                        <p>Rencana Tahunan</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('pages/widgets') }}" class="nav-link">
+                        <i class="nav-icon far fa-file"></i>
+                        <p>Evaluasi</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ url('pages/widgets') }}" class="nav-link">
                         <i class="nav-icon fas fa-file-word"></i>
-                        <p>Pengajuan Rencana Kerja</p>
+                        <p>Rencana Pengembangan</p>
                     </a>
                 </li>
                 <li class="nav-item mt-3">

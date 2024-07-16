@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PlanController;
+use App\Http\Controllers\SkpuController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\NoticeController;
@@ -22,6 +23,7 @@ use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\AuthMahasiswaController;
 use App\Http\Controllers\AuthOrganisasiController;
+use App\Http\Controllers\skpu_programsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +38,7 @@ use App\Http\Controllers\AuthOrganisasiController;
 
 Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/pengumuman', [PengumumanController::class, 'index']);
 
@@ -176,3 +178,25 @@ Route::post('/logout-biro', [AuthBiroController::class, 'logout'])->name('logout
 Route::get('/login-prodi', [AuthProdiController::class, 'showLoginForm'])->name('login.prodi');
 Route::post('/login-prodi', [AuthProdiController::class, 'login']);
 Route::post('/logout-prodi', [AuthProdiController::class, 'logout'])->name('logout.prodi');
+
+// SKPU
+Route::get('pemohon/skpu', [SkpuController::class, 'index']);
+
+Route::get('pemohon/skpu/strategis', [SkpuController::class, 'show']);
+
+Route::get('admin/program/store', [SkpuController::class, 'create']);
+
+Route::post('/admin/program', [SkpuController::class, 'store']);
+
+Route::get('/skpu/login', [SkpuController::class, 'showLoginForm'])->name('login.skpu');
+
+Route::post('/skpu/login', [SkpuController::class, 'login']);
+
+Route::post('/skpu/logout', [SkpuController::class, 'logout'])->name('logout.skpu');
+
+Route::get('/admin/skpu/', [skpu_programsController::class, 'create']);
+
+Route::post('/assign-program', [skpu_programsController::class, 'store'])->name('skpu.store');
+
+Route::get('/skpu/{parent_id}', [skpu_programsController::class, 'getChildPrograms'])->name('get.child.programs');
+

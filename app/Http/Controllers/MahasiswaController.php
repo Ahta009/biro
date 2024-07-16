@@ -18,15 +18,24 @@ class MahasiswaController extends Controller
     public function register(Request $request)
     {
         $request->validate([
-            'nim' => 'required|string|max:255',
+            'nim' => 'required|string|max:255|unique:mahasiswas',
             'nama' => 'required|string|max:255',
             'alamat' => 'nullable|string|max:255',
             'no_hp' => 'nullable|string|max:15',
-            'email' => 'required|string|email|max:255',
+            'email' => 'required|string|email|max:255|unique:mahasiswas',
             'tahun_masuk' => 'required|integer',
             'username' => 'required|string|max:255|unique:mahasiswa_users',
             'password' => 'required|string|min:8|confirmed',
-            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048',
+        ], [
+            'required' => ':Attribute Wajib Diisi.',
+            'unique' => ':Attribute Sudah Digunakan.',
+            'email' => 'Format :Attribute tidak valid.',
+            'min' => ':Attribute minimal :min karakter.',
+            'confirmed' => 'Konfirmasi :Attribute tidak cocok.',
+            'image' => ':Attribute harus berupa gambar.',
+            'mimes' => 'Format :Attribute harus jpeg, png, jpg, atau svg.',
+            'max' => ':Attribute maksimal :max KB.',
         ]);
 
         // Begin transaction

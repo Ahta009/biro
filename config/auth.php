@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+    'default' => [
+        'guard' => 'skpu',
+        'passwords' => 'skpus',
     ],
 
     /*
@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        
+        'skpu' => [
+        'driver' => 'session',
+        'provider' => 'skpus',
+        ],
     ],
 
     /*
@@ -63,6 +68,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+
+        'skpus' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Skpu::class,
         ],
 
         // 'users' => [
